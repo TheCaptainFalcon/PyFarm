@@ -2,6 +2,10 @@ import pygame
 import time
 import random
 from itertools import cycle
+import coke
+import os
+import subprocess
+import runpy
 
 pygame.init()
 pygame.mixer.pre_init
@@ -178,7 +182,7 @@ def game_instruct():
 
     #Sub-Title Text 3
     font = pygame.font.Font(font_name, 50)
-    sub_text = font.render("Press \"c\" to remove fishing pole", True, white)
+    sub_text = font.render("Press \"c\" to also interact", True, white)
     gameDisplay.blit(sub_text, (220, 350))
 
     #Sub-Title Text 4
@@ -206,6 +210,7 @@ def game_instruct():
                     pygame.mixer.Sound.play(selection)
                     pygame.mixer.music.stop()
                     game_loop()
+                    
 
 def game_loop(): #REPLACE WITH MAIN GAME LOOP
     # x = (width * .4 )
@@ -213,7 +218,7 @@ def game_loop(): #REPLACE WITH MAIN GAME LOOP
 
     # x_change = 0 
 
-
+    
 
     pygame.display.set_caption("PyFarm")
 
@@ -238,11 +243,11 @@ def game_loop(): #REPLACE WITH MAIN GAME LOOP
     #             if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
     #                 x_change = 0
  
-        
-
+ 
     gameDisplay.fill(black)    
-    
-    
+
+
+    runpy.run_path("coke.py")
 
 
     pygame.display.update()
