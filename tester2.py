@@ -7,6 +7,7 @@ import os
 import subprocess
 import runpy
 
+
 pygame.init()
 pygame.mixer.pre_init
 pygame.mixer.init
@@ -30,7 +31,9 @@ woodImg = pygame.image.load("images/wood_mod3.png")
 foodImg = pygame.image.load("images/food.png")
 
 pygame.display.set_caption("PyFarm")
+
 pygame.display.set_icon(foodImg)
+
 
 
  #FONT
@@ -79,7 +82,7 @@ def message_display(text):
 
 
 def farm(x1,y1):
-    gameDisplay.blit(menuImg, (x1,y1))    
+    gameDisplay.blit(menuImg, (x1,y1))  
 
 def button(msg, x,y,w,h,ic,ac,action=None):
     mouse = pygame.mouse.get_pos()
@@ -183,7 +186,7 @@ def game_instruct():
     #Sub-Title Text 3
     font = pygame.font.Font(font_name, 50)
     sub_text = font.render("Press \"c\" to also interact", True, white)
-    gameDisplay.blit(sub_text, (220, 350))
+    gameDisplay.blit(sub_text, (270, 350))
 
     #Sub-Title Text 4
     font = pygame.font.Font(font_name, 45)
